@@ -1,12 +1,8 @@
 # 데이터 한번에 한장 씩 불러오기
-
-# 예제 코드
-
 import numpy as np
 import cv2
 from bs4 import BeautifulSoup
 import os
-
 
 dataPath = '/datahdd/workdir/donghyun/faster_rcnn_kdh/VOCtrainval_11-May-2012/VOCdevkit/VOC2012/'
 categoryPath = 'Annotations/'
@@ -86,7 +82,7 @@ for i in range(6):
             ymax = int(float(ymax))
             crop = img[int(ymin): int(ymax), int(xmin):int(xmax)]
 
-
+            ## for one hot encoding ##
             if name == 'person':
                 name = (1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
             elif name == 'bird':
@@ -135,10 +131,3 @@ for i in range(6):
             np.savetxt("/datahdd/workdir/donghyun/faster_rcnn_kdh/PascalDataSetCroppedEdited/" + file_name+'.txt', name , delimiter=' ', encoding='utf-8')
 
             print('from '+str(numberOfFile)+'th file '+str(count) + ' images have been successfully made !!')
-
-
-
-
-
-
-
