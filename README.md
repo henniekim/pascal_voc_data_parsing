@@ -1,5 +1,4 @@
 # PASCAL VOC DATA PARSING
-> 이 프로젝트는 PASCAL VOC 데이터를 분류기 모델 학습에 적합하게 가공하기 위해 만들어졌습니다.
 
   PASCAL VOC 데이터 셋은 Annotaions 와 JPEGimage로 나누어져 있습니다.  
 Annotation은 XML 명세로 되어있으며,
