@@ -21,8 +21,7 @@ Annotation은 XML 명세로 되어있으며,
 python3 voc_dataset_parsing_edited.py
 ```
 ## 개발 환경 설정
- 
- 
+Python 3.x 버젼과, BeautifulSoup4, Opencv가 필요합니다.
 ```sh
 pip3 install BeautifulSoup4
 pip3 install opencv-python
