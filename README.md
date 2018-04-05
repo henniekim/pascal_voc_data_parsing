@@ -1,17 +1,17 @@
 # PASCAL VOC DATA PARSING
 
 \[한국어]  
-  PASCAL VOC 데이터 셋은 Annotaions 와 JPEGimage로 나누어져 있습니다.  
-Annotation은 XML 명세로 되어있으며,
+  PASCAL VOC 데이터 셋은 **Annotaions** 와 **JPEGimage**로 나누어져 있습니다.  
+**Annotation**은 **XML** 명세로 되어있으며,
 각 물체의 클래스와 바운딩 박스 좌표로 이루어져 있습니다.  
 분류기 모델을 학습시키기 위해서는 각 바운딩 박스 안에 있는 사진과 레이블을 가져와야 합니다.  
 
   본 프로젝트는 PASCAL VOC 데이터를 BeautifulSoup 과 opencv 라이브러리를 이용하여 가공합니다.
-여러 이미지가 들어있는 데이터 셋에서 각 물체를 분리하여 224 x 224 크기로 변환을 하여 저장합니다.  
+여러 이미지가 들어있는 데이터 셋에서 각 물체를 분리하여 224 x 224 크기로 변환을 하여 저장합니다. 
 레이블은 [20 x 1] one hot encoding 으로 텍스트 파일로 저장합니다.  
 
 \[English]  
-  PASCAL VOC data set consist of "Annotations" and "JPEGimage". Annotations are written in XML format which contain each object class and bounding box coordinates. You have to bring each bounding box and its photo and label in order to train the network.  
+  PASCAL VOC data set consist of **"Annotations"** and **"JPEGimage"**. Annotations are written in **XML** format which contain each object class and bounding box coordinates. You have to bring each bounding box and its photo and label in order to train the network.  
 
   This project processes on PASCAL VOC data with BeautifulSoup and opencv libs. Each photo contains many objects. It detaches each object, resizes to 224 x 224 and save to local storage. Label is saved in \*.txt with [ 20 x 1 ] one hot encoding. 
 
