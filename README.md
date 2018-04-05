@@ -8,13 +8,21 @@
 
   본 프로젝트는 PASCAL VOC 데이터를 BeautifulSoup 과 opencv 라이브러리를 이용하여 가공합니다.
 여러 이미지가 들어있는 데이터 셋에서 각 물체를 분리하여 224 x 224 크기로 변환을 하여 저장합니다. 
-레이블은 [20 x 1] one hot encoding 으로 텍스트 파일로 저장합니다.  
+레이블은 [20 x 1] one hot encoding 으로 텍스트 파일로 저장합니다.
 
-\[English]  
+  여기서 만든 데이터를 이용하여, 학습을 시키고자 하는 분은 https://github.com/henniekim/python_keras_vgg_16 을 방문해주세요. 
+  
+감사합니다.
+
+\[ENGLISH]  
   PASCAL VOC data set consist of **"Annotations"** and **"JPEGimage"**. Annotations are written in **XML** format which contain each object class and bounding box coordinates. You have to bring each bounding box and its photo and label in order to train the network.  
 
   This project processes on PASCAL VOC data with BeautifulSoup and opencv libs. Each photo contains many objects. It detaches each object, resizes to 224 x 224 and save to local storage. Label is saved in \*.txt with [ 20 x 1 ] one hot encoding. 
-
+  
+  Anyone who want to train with the dataset made hers, visit https://github.com/henniekim/python_keras_vgg_16
+  
+Thank you !
+ 
 ## 설치 방법
 
 적당한 폴더에 PASCAL VOC 데이터를 받습니다.  
