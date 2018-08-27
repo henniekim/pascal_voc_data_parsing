@@ -1,13 +1,25 @@
-# 데이터 한번에 한장 씩 불러오기
+#
 import numpy as np
 import cv2
 from bs4 import BeautifulSoup
 import os
+import glob
+import argparse
 
-dataPath = '/datahdd/workdir/donghyun/faster_rcnn_kdh/VOCtrainval_11-May-2012/VOCdevkit/VOC2012/'
+# Creating a parser
+parser = argparse.ArgumentParser()
+
+# Parameter passing from command line 
+parser.add_argument('--dataPath', type=str, default='/datahdd/workdir/donghyun/faster_rcnn_kdh/VOCtrainval_11-May-2012/VOCdevkit/VOC2012/',  help='The folder Which containts dataset : */*/VOCtrainval_11-May-2012/VOCdevkit/VOC2012')
+parser.add_argument("--years", type=str, nargs='+',  default="all", help="Select the year to parse")
+
+args = parser.parse_args()
+ 
+dataPath = args.dataPath 
 categoryPath = 'Annotations/'
 imagePath = 'JPEGImages/'
-years = ('2007', '2008', '2009', '2010', '2011', '2012')
+#years = ('2007', '2008', '2009', '2010', '2011', '2012')
+years = args.years
 endOfData = (9950, 8773, 5331, 6994, 7214, 4331)
 
 filenumber = '0'
@@ -21,9 +33,10 @@ count = 0
 img = list()
 numberOfFile = 0
 
-for i in range(6):
+for i in range(len(years)):
     year = years[i]
-    for currentDataNumber in range(endOfData[i]):
+    EOD = int(year)-2007
+    for currentDataNumber in range(endOfData[EOD]):
         if 0 <= currentDataNumber and currentDataNumber < 10 :
             filenumber = '00000'
         elif 10 <= currentDataNumber and currentDataNumber < 100 :
@@ -47,7 +60,7 @@ for i in range(6):
             numberOfFile += 1
             pass
         except :
-            #print("Image doesn't exist : " + filenumber)
+            print("Image doesn't exist : " + filenumber)
             continue
 
         soup = BeautifulSoup(xml, 'html.parser')
@@ -127,7 +140,7 @@ for i in range(6):
             file_name = 'pascal_voc_' + str(count)
             crop = cv2.resize(crop, dsize=(224, 224))
             count += 1
-            cv2.imwrite("/datahdd/workdir/donghyun/faster_rcnn_kdh/PascalDataSetCroppedEdited/" + file_name +'.jpg', crop)
-            np.savetxt("/datahdd/workdir/donghyun/faster_rcnn_kdh/PascalDataSetCroppedEdited/" + file_name+'.txt', name , delimiter=' ', encoding='utf-8')
+            cv2.imwrite("./PascalDataSetCroppedEdited/" + file_name +'.jpg', crop)
+            np.savetxt("./PascalDataSetCroppedEdited/" + file_name+'.txt', name , delimiter=' ', encoding='utf-8')
 
             print('from '+str(numberOfFile)+'th file '+str(count) + ' images have been successfully made !!')
