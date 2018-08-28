@@ -36,7 +36,7 @@ You can get it from as below.
 ## 사용 예제
 터미널 창에서 다음과 같이 실행하세요.
 ```sh
-python3 voc_dataset_parsing_edited.py
+python3 voc_dataset_parsing_edited.py --dataPath $YOUR_DATA_PATH --years 2007 2008 2009 
 ```
 ## 개발 환경 설정
 Python 3.x 버젼과, BeautifulSoup4, Opencv가 필요합니다.
@@ -51,7 +51,8 @@ pip3 install opencv-python
     * 작업 진행 중
 * 0.0.2
     * Add english document
- 
+* 0.0.3 
+    * 이제 특정 연도를 선택하여 데이터를 처리할 수 있습니다. 
 ## 정보
 
 김동현 – seru_s@me.com
