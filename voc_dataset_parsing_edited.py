@@ -20,6 +20,8 @@ categoryPath = 'Annotations/'
 imagePath = 'JPEGImages/'
 #years = ('2007', '2008', '2009', '2010', '2011', '2012')
 years = args.years
+if years == 'all'
+    years = ('2007', '2008', '2009', '2010', 2011', '2012')
 endOfData = (9950, 8773, 5331, 6994, 7214, 4331)
 
 filenumber = '0'
