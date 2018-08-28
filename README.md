@@ -53,6 +53,11 @@ pip3 install opencv-python
     * Add english document
 * 0.0.3 
     * 이제 특정 연도를 선택하여 데이터를 처리할 수 있습니다. 
+    
+## 추후 업데이트 예정
+
+* 처리한 데이터의 파일명에 연도를 포함하는 옵션 추가하기
+
 ## 정보
 
 김동현 – seru_s@me.com
